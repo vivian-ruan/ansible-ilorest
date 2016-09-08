@@ -1,0 +1,16 @@
+---
+# YAML file for DIA servers iLO service
+- hosts: all
+  vars:
+    ilo_user: ilo_user
+    ilo_pass: ****
+  connection: local
+  gather_facts: False
+
+  tasks:
+     - name: Restart iLO server
+       restart_server_module:
+         dia_ilo_inventory_name: "{{ inventory_hostname }}"
+         dia_ilo_ip: "{{ ilo_ip }}"
+         dia_ilo_user: "{{ ilo_user }}"
+         dia_ilo_pass: "{{ ilo_pass }}"
