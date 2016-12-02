@@ -41,31 +41,6 @@ notes:
 '''
 
 EXAMPLES = '''
-- name: Ensure that an Enclosure is present using the default configuration
-  oneview_enclosure:
-    config: "{{ config_file_path }}"
-    state: present
-    data:
-      enclosureGroupUri : {{ enclosure_group_uri }},
-      hostname : {{ enclosure_hostname }},
-      username : {{ enclosure_username }},
-      password : {{ enclosure_password }},
-      name: 'Test-Enclosure'
-      licensingIntent : "OneView"
-- name: Updates the enclosure to have a name of "Test-Enclosure-Renamed".
-  oneview_enclosure:
-    config: "{{ config_file_path }}"
-    state: present
-    data:
-      name: 'Test-Enclosure'
-      newName : "Test-Enclosure-Renamed
-- name: Ensure that enclosure is absent
-  oneview_enclosure:
-    config: "{{ config_file_path }}"
-    state: absent
-    data:
-      name: 'Test-Enclosure'
-
 '''
 
 def get_type(obj):
